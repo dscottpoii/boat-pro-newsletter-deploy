@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boat Pro - Professional Maritime Services & Expert Newsletter</title>
+    <meta name="description" content="Expert yacht delivery, professional boating advice, and the only newsletter you need. Free boat show guide. Licensed USCG captains.">
+    <link rel="icon" type="image/png" href="boat-pro-logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(12, 74, 110, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a, .nav-links button {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .nav-links a:hover, .nav-links button:hover {
+            color: #d4af37;
+        }
+
+        .nav-cta {
+            background: #d4af37 !important;
+            color: #0c4a6e !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+            color: #0c4a6e !important;
+        }
+
+        .mobile-menu {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0c4a6e 0%, #0284c7 100%);
+            color: white;
+            padding: 120px 2rem 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 Q300,40 600,20 T1200,10 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.1)"/></svg>') repeat-x bottom;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: #d4af37;
+            color: #0c4a6e;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #0c4a6e;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 80px 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: #0c4a6e;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #0284c7;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            color: #0c4a6e;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            color: #0284c7;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .service-link:hover {
+            gap: 0.75rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature h3 {
+            color: #0c4a6e;
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, #0c4a6e 0%, #0284c7 100%);
+            color: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #d4af37;
+        }
+
+        /* Newsletter CTA */
+        .newsletter-cta {
+            background: #fef3c7;
+            text-align: center;
+        }
+
+        .newsletter-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .newsletter-box h2 {
+            color: #0c4a6e;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-box p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .email-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 1rem 1.5rem;
+            border: 2px solid #0284c7;
+            border-radius: 30px;
+            font-size: 1rem;
+        }
+
+        .email-form button {
+            padding: 1rem 2.5rem;
+            background: #0284c7;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .email-form button:hover {
+            background: #0369a1;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #0c4a6e;
+            color: white;
+            padding: 60px 2rem 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #d4af37;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a, .footer-section button {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1rem;
+            font-family: inherit;
+            padding: 0;
+        }
+
+        .footer-section a:hover, .footer-section button:hover {
+            color: #d4af37;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            color: #666;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .modal-close:hover {
+            background: #f0f0f0;
+        }
+
+        .modal-form {
+            margin-top: 2rem;
+        }
+
+        .modal-form input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .modal-form input:focus {
+            outline: none;
+            border-color: #0284c7;
+        }
+
+        .modal-form button {
+            width: 100%;
+            padding: 1.2rem;
+            background: #0284c7;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .modal-form button:hover {
+            background: #0369a1;
+        }
+
+        .modal-form button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #0c4a6e;
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero {
+                padding: 100px 1.5rem 60px;
+            }
+
+            .section {
+                padding: 60px 1.5rem;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            .email-form input,
+            .email-form button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo" style="display: flex; align-items: center;">
+                <img src="boat-pro-logo.png" alt="Boat Pro" style="height: 60px; width: auto;">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="hospice-cup.html">Hospice Cup</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+                <li><a href="mailto:andersondougsott@gmail.com?subject=Boat Pro Inquiry">Contact</a></li>
+                <li><button onclick="openGuideModal()" class="nav-cta">Free Guide</button></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">☰</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Your Trusted Maritime Partner</h1>
+            <p>Professional yacht delivery, expert boating advice, and the only newsletter you need from licensed USCG captains with decades of experience.</p>
+            <div class="hero-buttons">
+                <button onclick="openGuideModal()" class="btn btn-primary">Download Free Guide</button>
+                <a href="#services" class="btn btn-secondary">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services" style="background: #f8fafc;">
+        <div class="container">
+            <h2 class="section-title">The only newsletter you need</h2>
+            <p class="section-subtitle">Comprehensive solutions for boat owners, delivered by experienced professionals</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🚢</span>
+                    <h3>Yacht Delivery</h3>
+                    <p>Professional boat delivery services with licensed captains. Safe, reliable, and on-schedule transport for vessels of all sizes.</p>
+                    <a href="#yacht-delivery" class="service-link">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">📚</span>
+                    <h3>Expert Newsletter</h3>
+                    <p>Weekly insights on boat maintenance, reviews, navigation tips, and DIY guides. Save thousands with professional advice.</p>
+                    <a href="#expert-newsletter" class="service-link">Subscribe Now →</a>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">⚓</span>
+                    <h3>Boat Show Consulting</h3>
+                    <p>Navigate boat shows like a pro with our insider guides and purchasing strategies. Get the best deals.</p>
+                    <a href="#boat-show-consulting" class="service-link">Download Guide →</a>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🔧</span>
+                    <h3>Technical Support</h3>
+                    <p>DIY maintenance guides, troubleshooting assistance, and systems advice from marine professionals.</p>
+                    <a href="#technical-support" class="service-link">View Resources →</a>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🧭</span>
+                    <h3>Navigation Training</h3>
+                    <p>Chart reading, passage planning, weather routing, and advanced seamanship techniques.</p>
+                    <a href="#navigation-training" class="service-link">Start Learning →</a>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">⛵</span>
+                    <h3>Boat Reviews</h3>
+                    <p>Honest, in-depth reviews of new and classic boats. Real-world testing from experienced captains.</p>
+                    <a href="#boat-reviews" class="service-link">Read Reviews →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section" id="about" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Why Choose Boat Pro?</h2>
+            <p class="section-subtitle">Experience, expertise, and a commitment to your success on the water</p>
+            
+            <div class="features-grid">
+                <div class="feature">
+                    <span class="feature-icon">🎓</span>
+                    <h3>Licensed Professionals</h3>
+                    <p>USCG licensed captains with decades of hands-on maritime experience across all vessel types.</p>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">🛡️</span>
+                    <h3>Fully Insured</h3>
+                    <p>Comprehensive professional marine insurance coverage for your peace of mind.</p>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">💰</span>
+                    <h3>Save Money</h3>
+                    <p>DIY guides and expert advice that save boat owners thousands in service fees.</p>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">📞</span>
+                    <h3>24/7 Support</h3>
+                    <p>Premium members get priority access to expert advice when you need it most.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">What Our Clients Say</h2>
+            <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">Trusted by thousands of boat owners nationwide</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">"Professional yacht delivery from Annapolis to Florida. The captain was experienced, communicative, and my boat arrived in perfect condition. Highly recommend!"</p>
+                    <p class="testimonial-author">— Michael Thompson, Yacht Owner</p>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-text">"The newsletter has saved me thousands in marine service fees. The DIY guides are clear, detailed, and written by people who actually know boats."</p>
+                    <p class="testimonial-author">— Jennifer Rodriguez, Premium Member</p>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-text">"The boat show guide was incredible. Negotiated a better deal, avoided several problem boats, and felt confident throughout the entire buying process."</p>
+                    <p class="testimonial-author">— David Chen, First-Time Buyer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hospice Cup Section -->
+    <section class="section" id="hospice-cup" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Proud Supporter of Hospice Cup</h2>
+            <p class="section-subtitle">Supporting compassionate care through the sport we love</p>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="background: #f8fafc; padding: 3rem; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center;">
+                    <!-- Hospice Cup Logo -->
+                    <div style="position: relative; width: 300px; height: 200px; margin: 0 auto 20px;">
+                        <div style="position: absolute; width: 140px; height: 140px; background: #F4D160; border-radius: 50%; top: 0; left: 50%; transform: translateX(-50%); z-index: 1;"></div>
+                        <div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; gap: -5px; z-index: 2;">
+                            <div style="width: 0; height: 0; border-style: solid; border-width: 0 25px 90px 25px; border-color: transparent transparent #E8777D transparent; margin-right: -8px;"></div>
+                            <div style="width: 0; height: 0; border-style: solid; border-width: 0 30px 100px 30px; border-color: transparent transparent #48C9B0 transparent; margin-right: -8px;"></div>
+                            <div style="width: 0; height: 0; border-style: solid; border-width: 0 28px 95px 28px; border-color: transparent transparent #9B9FDB transparent;"></div>
+                        </div>
+                        <div style="position: absolute; bottom: 30px; left: 0; width: 100%; height: 3px; background: #2E5F8E; border-radius: 2px; z-index: 3;"></div>
+                    </div>
+                    <div style="font-size: 48px; font-weight: bold; color: #2E5F8E; letter-spacing: 2px; margin: 20px 0;">
+                        HOSPICE CUP
+                    </div>
+                    
+                    <p style="color: #666; font-size: 1.1rem; line-height: 1.8; margin: 2rem 0;">
+                        Boat Pro is proud to support the Hospice Cup, an annual sailing regatta that raises funds and awareness for hospice care. This beautiful event combines our passion for sailing with meaningful support for compassionate end-of-life care in our community.
+                    </p>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 10px; margin: 2rem 0; border-left: 4px solid #48C9B0;">
+                        <h3 style="color: #2E5F8E; margin-bottom: 1rem;">How We Support</h3>
+                        <ul style="text-align: left; color: #666; line-height: 2; margin-left: 1.5rem;">
+                            <li>Professional delivery captains volunteer their time</li>
+                            <li>Free boat preparation and safety checks for participants</li>
+                            <li>Navigation support and course planning</li>
+                            <li>Newsletter features to raise awareness</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="hospice-cup.html" class="btn btn-primary" style="margin-top: 1rem; text-decoration: none;">
+                        Learn More About Hospice Cup
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="section newsletter-cta" id="newsletter">
+        <div class="container">
+            <div class="newsletter-box">
+                <h2>🎁 Get Your FREE Boat Show Guide</h2>
+                <p>Plus insider tips, expert reviews, and money-saving advice delivered to your inbox. Join 10,000+ smart boat owners!</p>
+                
+                <div style="text-align: center; margin: 2rem 0;">
+                    <button onclick="openGuideModal()" class="btn btn-primary">
+                        📥 Download Free Guide Now
+                    </button>
+                </div>
+
+                <p style="font-size: 1rem; color: #666; margin: 2rem 0 1rem; font-weight: 600;">
+                    Want weekly expert content too? Subscribe below:
+                </p>
+                
+                <form class="email-form" action="https://formspree.io/f/mwprnlll" method="POST">
+                    <input type="email" name="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe to Newsletter</button>
+                </form>
+                
+                <p style="font-size: 0.9rem; color: #999; margin-top: 1rem;">
+                    🔒 No spam, ever. Unsubscribe anytime.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Boat Pro</h3>
+                <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.8;">
+                    Your trusted maritime partner for professional yacht delivery, expert boating advice, and comprehensive services.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#yacht-delivery">Yacht Delivery</a></li>
+                    <li><a href="#expert-newsletter">Newsletter Subscription</a></li>
+                    <li><a href="#boat-reviews">Boat Reviews</a></li>
+                    <li><a href="#technical-support">Technical Support</a></li>
+                    <li><a href="#navigation-training">Navigation Training</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><button onclick="openGuideModal()">Free Boat Show Guide</button></li>
+                    <li><a href="#technical-support">DIY Maintenance</a></li>
+                    <li><a href="#boat-reviews">Blog & Articles</a></li>
+                    <li><a href="hospice-cup.html">Hospice Cup</a></li>
+                    <li><a href="#navigation-training">Video Tutorials</a></li>
+                    <li><a href="#expert-newsletter">Member Resources</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <a href="mailto:andersondougsott@gmail.com?subject=Boat Pro Inquiry" class="btn btn-primary" style="display: inline-block; margin: 1rem 0; padding: 0.75rem 1.5rem; text-align: center; text-decoration: none;">
+                    📧 More Info
+                </a>
+                <ul style="margin-top: 1rem;">
+                    <li><a href="tel:410-555-0123">(410) 555-0123</a></li>
+                    <li>Annapolis, Maryland</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Boat Pro. All rights reserved.</p>
+            <div style="margin-top: 1rem;">
+                <a href="#" style="color: rgba(255, 255, 255, 0.7); margin: 0 1rem; text-decoration: none;">Privacy Policy</a>
+                <a href="#" style="color: rgba(255, 255, 255, 0.7); margin: 0 1rem; text-decoration: none;">Terms of Service</a>
+                <a href="#" style="color: rgba(255, 255, 255, 0.7); margin: 0 1rem; text-decoration: none;">Refund Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Free Guide Modal -->
+    <div id="guideModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeGuideModal()">&times;</button>
+            <h2 style="color: #0c4a6e; font-size: 1.8rem; margin-bottom: 1rem; text-align: center;">
+                📘 Download Your FREE Boat Show Guide
+            </h2>
+            <p style="color: #666; text-align: center; margin-bottom: 2rem;">
+                Enter your details to get instant access to the complete guide
+            </p>
+            
+            <form id="guideForm" class="modal-form" action="https://formspree.io/f/mwprnlll" method="POST">
+                <input type="hidden" name="_subject" value="New Boat Show Guide Download">
+                <input type="text" name="firstName" placeholder="First Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <button type="submit" id="submitBtn">
+                    📥 Download Guide Now
+                </button>
+            </form>
+            
+            <p style="font-size: 0.85rem; color: #999; text-align: center; margin-top: 1rem;">
+                🔒 We respect your privacy. No spam, ever.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Modal functions
+        function openGuideModal() {
+            document.getElementById('guideModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGuideModal() {
+            document.getElementById('guideModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('guideModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeGuideModal();
+            }
+        });
+
+        // Handle form submission
+        document.getElementById('guideForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '⏳ Processing...';
+            
+            try {
+                const formData = new FormData(this);
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    submitBtn.innerHTML = '✓ Success! Downloading...';
+                    
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = 'https://docs.google.com/document/d/137UWkCw2uxV1ksgOEQHEAZIzTQgRfHyCxd8Db6vgv2s/export?format=pdf';
+                    downloadLink.download = 'Boat-Show-Guide.pdf';
+                    document.body.appendChild(downloadLink);
+                    downloadLink.click();
+                    document.body.removeChild(downloadLink);
+                    
+                    setTimeout(() => {
+                        closeGuideModal();
+                        this.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalText;
+                        alert('🎉 Success! Your guide is downloading now. Check your downloads folder.');
+                    }, 1500);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+                alert('Oops! Something went wrong. Please try again or contact us directly.');
+                console.error('Form submission error:', error);
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
