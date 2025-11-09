@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boat Pro Winterization Guide</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: white;
+            padding: 40px;
+            max-width: 210mm;
+            margin: 0 auto;
+        }
+        
+        /* Header with Logo */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 4px solid #1e40af;
+        }
+        
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            text-align: left;
+        }
+        
+        .logo-text h1 {
+            font-size: 42px;
+            color: #0f172a;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+        
+        .logo-tagline {
+            font-size: 14px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .guide-title {
+            font-size: 36px;
+            color: #0f172a;
+            margin: 20px 0 10px;
+            font-weight: 800;
+        }
+        
+        .guide-subtitle {
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+        
+        .guarantee-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #0f172a;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        
+        /* Introduction */
+        .intro {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 6px solid #3b82f6;
+        }
+        
+        .intro h2 {
+            color: #1e40af;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        /* Section Styling */
+        .section {
+            margin: 40px 0;
+            page-break-inside: avoid;
+        }
+        
+        .section-header {
+            background: #0f172a;
+            color: white;
+            padding: 20px 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-icon {
+            font-size: 36px;
+            min-width: 50px;
+        }
+        
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+        }
+        
+        .section-content {
+            padding: 0 10px;
+        }
+        
+        /* Checklist Items */
+        .checklist {
+            margin: 20px 0;
+        }
+        
+        .checklist-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .checkbox {
+            min-width: 24px;
+            height: 24px;
+            border: 3px solid #3b82f6;
+            border-radius: 4px;
+            margin-top: 2px;
+        }
+        
+        .checklist-content h4 {
+            color: #1e40af;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .checklist-content p {
+            color: #475569;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* Warning Box */
+        .warning {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .warning-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .warning-icon {
+            font-size: 28px;
+        }
+        
+        .warning h4 {
+            color: #92400e;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        .warning p {
+            color: #78350f;
+            line-height: 1.6;
+        }
+        
+        /* Tip Box */
+        .tip {
+            background: #d1fae5;
+            border: 2px solid #10b981;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .tip-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .tip h4 {
+            color: #065f46;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        .tip p {
+            color: #047857;
+            line-height: 1.6;
+        }
+        
+        /* Timeline */
+        .timeline {
+            margin: 30px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .timeline-marker {
+            min-width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            padding-top: 5px;
+        }
+        
+        .timeline-content h4 {
+            color: #1e40af;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-content p {
+            color: #475569;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 3px solid #e2e8f0;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .contact-info h4 {
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+        
+        /* Print Styling */
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        /* Download Button */
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(16,185,129,0.3);
+            z-index: 1000;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(16,185,129,0.4);
+        }
+        
+        @media print {
+            .download-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Download Button -->
+    <a href="#" onclick="window.print(); return false;" class="download-btn no-print">📥 Download PDF</a>
+    
+    <!-- Header with Boat Pro Logo -->
+    <div class="header">
+        <div class="logo-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="https://i.imgur.com/YourLogoHere.png" alt="Boat Pro Logo">
+                </div>
+                <div class="logo-text">
+                    <h1>BOAT PRO</h1>
+                    <div class="logo-tagline">Expert Boating Knowledge</div>
+                </div>
+            </div>
+        </div>
+        <h2 class="guide-title">Complete Boat Winterization Guide</h2>
+        <p class="guide-subtitle">Protect Your Investment & Ensure Spring-Ready Performance</p>
+        <div class="guarantee-badge">💰 Save Up to $5,000 Guaranteed</div>
+    </div>
+    
+    <!-- Introduction -->
+    <div class="intro">
+        <h2>Why Proper Winterization Matters</h2>
+        <p>Proper winterization is one of the most important maintenance tasks for any boat owner. Whether you own a powerboat or sailboat, failing to winterize correctly can result in thousands of dollars in damage from freezing temperatures, moisture, and corrosion.</p>
+        <p style="margin-top: 15px;"><strong>This comprehensive guide covers everything you need to know</strong> to protect your vessel during the off-season and ensure it's ready to go when spring arrives. Follow these proven steps used by marine professionals worldwide.</p>
+    </div>
+    
+    <!-- Section 1: Engine Winterization -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">⚙️</span>
+            <h3 class="section-title">1. Engine Winterization</h3>
+        </div>
+        <div class="section-content">
+            <p style="margin-bottom: 20px;">The engine is your boat's most expensive component and the most vulnerable to freeze damage. Follow these critical steps:</p>
+            
+            <div class="checklist">
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Change Engine Oil & Filter</h4>
+                        <p>Run the engine to warm the oil, then change it while warm. Old oil contains acids and moisture that can corrode internal parts during storage. Replace the filter at the same time.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Fog the Engine</h4>
+                        <p>Spray fogging oil into the carburetor or fuel injectors while the engine runs. This coats internal components and prevents corrosion. Continue until white smoke appears from the exhaust.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Add Fuel Stabilizer</h4>
+                        <p>Add marine-grade fuel stabilizer to a nearly full tank (prevents condensation). Run the engine for 10 minutes to circulate stabilizer through the entire fuel system.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Drain or Protect Cooling System</h4>
+                        <p><strong>Outboards/I/O:</strong> Flush with antifreeze using engine flush kit. <strong>Inboards:</strong> Drain raw water system completely or fill with non-toxic marine antifreeze.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Remove & Store Batteries</h4>
+                        <p>Disconnect, remove, clean terminals, and store in a warm, dry location. Place on a trickle charger or charge monthly to prevent sulfation damage.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="warning">
+                <div class="warning-header">
+                    <span class="warning-icon">⚠️</span>
+                    <h4>Critical Warning</h4>
+                </div>
+                <p>Even one night below freezing can crack an engine block if water remains in the cooling system. A cracked block can cost $5,000-$15,000 to replace. Always err on the side of caution!</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Section 2: Fuel System -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">⛽</span>
+            <h3 class="section-title">2. Fuel System Protection</h3>
+        </div>
+        <div class="section-content">
+            <div class="checklist">
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Fill Tank or Empty Tank (Choose One)</h4>
+                        <p><strong>Option 1 (Recommended):</strong> Fill tank completely with fresh fuel + stabilizer to prevent condensation. <strong>Option 2:</strong> Empty tank completely if fuel is more than 2 months old.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Replace Fuel Filter</h4>
+                        <p>Install a new fuel filter to remove any water or debris. This prevents contamination issues in spring.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Check for Leaks</h4>
+                        <p>Inspect all fuel lines, connections, and tank for leaks or corrosion. Repair or replace any damaged components before storage.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip">
+                <div class="tip-header">
+                    <span class="warning-icon">💡</span>
+                    <h4>Pro Tip: Ethanol Concerns</h4>
+                </div>
+                <p>Ethanol fuel (E10) attracts moisture and deteriorates quickly. Use ethanol-free fuel if available, or add a quality fuel stabilizer that specifically addresses ethanol issues. This can prevent costly carburetor and fuel system repairs.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Section 3: Plumbing & Water Systems -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">💧</span>
+            <h3 class="section-title">3. Plumbing & Water Systems</h3>
+        </div>
+        <div class="section-content">
+            <div class="checklist">
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Drain Freshwater System</h4>
+                        <p>Open all faucets, drain hot water heater, and use water pump to purge lines. Blow out remaining water with compressed air (35 PSI max) or add non-toxic antifreeze.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Winterize Heads (Toilets)</h4>
+                        <p>Pump out holding tank completely. Flush system with fresh water, then pump marine antifreeze through until it appears in bowl. Add extra antifreeze to bowl and holding tank.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Protect Water Heater</h4>
+                        <p>Drain completely via drain plug. If antifreeze method is used, bypass water heater to avoid wasting 6-10 gallons of antifreeze filling it unnecessarily.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Winterize Livewell & Bait Wells</h4>
+                        <p>Drain completely, clean thoroughly, and run antifreeze through pumps. Leave drain plugs open to allow air circulation and prevent moisture buildup.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Section 4: Hull & Exterior -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">🚤</span>
+            <h3 class="section-title">4. Hull & Exterior Care</h3>
+        </div>
+        <div class="section-content">
+            <div class="checklist">
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Wash & Wax Hull</h4>
+                        <p>Clean hull thoroughly with marine soap to remove salt, grime, and organic growth. Apply quality marine wax for UV and moisture protection. This prevents gelcoat oxidation.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Check Through-Hulls & Seacocks</h4>
+                        <p>Inspect all through-hull fittings for corrosion or damage. Lubricate seacocks with waterproof grease. Consider closing all seacocks during storage.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Clean & Treat Canvas & Upholstery</h4>
+                        <p>Clean all canvas, Bimini tops, and upholstery. Apply UV protectant. Remove cushions and store in dry location if possible to prevent mildew.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Protect Metal & Chrome</h4>
+                        <p>Clean and polish all metal fittings. Apply corrosion inhibitor to prevent rust and pitting. Spray hinges, latches, and locks with lubricant.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Cover or Shrink-Wrap</h4>
+                        <p>Install breathable cover or professional shrink-wrap. Ensure proper ventilation to prevent mold. Cover should be tight enough to prevent wind damage but allow air circulation.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip">
+                <div class="tip-header">
+                    <span class="warning-icon">💡</span>
+                    <h4>Pro Tip: Support System</h4>
+                </div>
+                <p>If storing on trailer, support hull with jack stands to prevent stress on trailer and hull. Block weight evenly and chock wheels. If storing on land, ensure proper cradle support at manufacturer-recommended points.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Section 5: Interior Storage -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">🏠</span>
+            <h3 class="section-title">5. Interior Storage & Protection</h3>
+        </div>
+        <div class="section-content">
+            <div class="checklist">
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Deep Clean Interior</h4>
+                        <p>Vacuum carpets, clean all surfaces, and remove any food or organic materials. Even small crumbs can attract pests and create odors.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Prevent Mold & Mildew</h4>
+                        <p>Place moisture absorbers (DampRid, silica gel) throughout cabin. Leave cabinet doors and drawers slightly open for air circulation. Consider a solar-powered ventilator.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Remove Valuables & Electronics</h4>
+                        <p>Take home all electronics (GPS, chartplotter, VHF radio), safety equipment, valuable gear, and personal items. Store in climate-controlled environment.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Pest Prevention</h4>
+                        <p>Seal any openings where rodents could enter. Place rodent deterrent (peppermint oil sachets, ultrasonic devices, or traps) in cabin and engine compartment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Section 6: Electrical Systems -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">🔌</span>
+            <h3 class="section-title">6. Electrical System Care</h3>
+        </div>
+        <div class="section-content">
+            <div class="checklist">
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Battery Maintenance</h4>
+                        <p>As mentioned earlier: disconnect, remove, clean terminals with baking soda solution, check water levels (if applicable), and maintain charge throughout winter.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Inspect All Wiring</h4>
+                        <p>Check for corrosion, damage, or loose connections. Spray electrical connections with corrosion inhibitor. Test bilge pump before storage.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Shore Power Considerations</h4>
+                        <p>If leaving boat plugged in, use GFCI-protected circuit. Consider only running battery maintainer rather than all systems. Install temperature-activated bilge pump heater if needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Section 7: Winterization Timeline -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">📅</span>
+            <h3 class="section-title">7. Winterization Timeline</h3>
+        </div>
+        <div class="section-content">
+            <p style="margin-bottom: 25px;">Follow this proven timeline for systematic winterization:</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">Week 1</div>
+                    <div class="timeline-content">
+                        <h4>Final Season Use & Initial Prep</h4>
+                        <p>Take final trip, noting any issues. Begin gathering supplies: antifreeze, fuel stabilizer, fogging oil, wax, cleaners. Schedule any needed repairs.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">Week 2</div>
+                    <div class="timeline-content">
+                        <h4>Engine & Fuel Systems</h4>
+                        <p>Change oil, fog engine, stabilize fuel, winterize cooling system. This is the most critical step - don't rush it!</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">Week 3</div>
+                    <div class="timeline-content">
+                        <h4>Plumbing & Systems</h4>
+                        <p>Winterize freshwater system, heads, water heater. Drain livewell and bait wells. Complete all fluid changes (outdrive oil, power steering, etc.).</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">Week 4</div>
+                    <div class="timeline-content">
+                        <h4>Cleaning & Protection</h4>
+                        <p>Wash and wax hull, clean interior, remove valuables, install moisture absorbers, treat canvas and upholstery.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">Week 5</div>
+                    <div class="timeline-content">
+                        <h4>Final Details & Covering</h4>
+                        <p>Remove batteries, final inspection, install cover or shrink-wrap. Take photos for insurance purposes. Lock and secure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Section 8: Storage Options -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">🏢</span>
+            <h3 class="section-title">8. Storage Options Comparison</h3>
+        </div>
+        <div class="section-content">
+            <div class="checklist">
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Indoor Heated Storage ($$$)</h4>
+                        <p><strong>Pros:</strong> Best protection, minimal winterization needed, climate controlled. <strong>Cons:</strong> Most expensive ($100-150/ft per season). <strong>Best for:</strong> High-value boats, warmer spring commissioning.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Indoor Unheated Storage ($$)</h4>
+                        <p><strong>Pros:</strong> Protected from weather, more affordable. <strong>Cons:</strong> Full winterization required, can still get very cold. <strong>Best for:</strong> Good balance of protection and cost.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Outdoor Marina/Yard Storage ($)</h4>
+                        <p><strong>Pros:</strong> Most affordable, easy spring launch. <strong>Cons:</strong> Exposed to elements, requires quality shrink-wrap. <strong>Best for:</strong> Budget-conscious owners, properly winterized boats.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Home/Backyard Storage ($)</h4>
+                        <p><strong>Pros:</strong> No storage fees, convenient access. <strong>Cons:</strong> May violate HOA rules, requires proper support. <strong>Best for:</strong> Trailerboat owners with adequate space.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 9: Spring Commissioning Checklist -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">🌸</span>
+            <h3 class="section-title">9. Spring Commissioning Preview</h3>
+        </div>
+        <div class="section-content">
+            <p style="margin-bottom: 20px;">When spring arrives, follow this checklist to safely return your boat to service:</p>
+            
+            <div class="checklist">
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Reinstall Batteries</h4>
+                        <p>Fully charge batteries before installation. Clean terminals and reconnect. Test all electrical systems before launching.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Check All Fluids</h4>
+                        <p>Verify engine oil level, outdrive/transmission fluid, power steering, coolant. Top off as needed with fresh fluids.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Inspect Safety Equipment</h4>
+                        <p>Test fire extinguishers, check flare expiration dates, inspect life jackets for damage, verify all required safety gear is aboard.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Test Engine Before Launch</h4>
+                        <p>Using muffs or tank, start engine and run for 10 minutes. Check for leaks, unusual sounds, proper water flow from exhaust. Test all gauges.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Underwater Inspection</h4>
+                        <p>After launching, inspect prop, zincs, through-hulls, and bottom paint. Replace zincs if 50% or more dissolved. Schedule haul-out if bottom paint needs attention.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Section 10: Winterization Costs & Savings -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">💰</span>
+            <h3 class="section-title">10. Cost Analysis: DIY vs Professional</h3>
+        </div>
+        <div class="section-content">
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                <thead>
+                    <tr style="background: #1e40af; color: white;">
+                        <th style="padding: 15px; text-align: left; border: 1px solid #ddd;">Service</th>
+                        <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">Professional Cost</th>
+                        <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">DIY Cost</th>
+                        <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">Your Savings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: #f8fafc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">Engine Winterization</td>
+                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">$350-500</td>
+                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; color: #10b981; font-weight: bold;">$75-100</td>
+                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; color: #10b981; font-weight: bold;">$275-400</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Plumbing System</td>
+                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">$200-300</td>
+                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; color: #10b981; font-weight: bold;">$40-60</td>
+                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; color: #10b981; font-weight: bold;">$160-240</td>
+                    </tr>
+                    <tr style="background: #f8fafc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">Shrink Wrap</td>
+                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">$12-18/ft</td>
+                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; color: #10b981; font-weight: bold;">$150-250</td>
+                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; color: #10b981; font-weight: bold;">$150-300</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Bottom Wash & Wax</td>
+                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">$300-500</td>
+                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; color: #10b981; font-weight: bold;">$50-75</td>
+                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; color: #10b981; font-weight: bold;">$250-425</td>
+                    </tr>
+                    <tr style="background: #fef3c7; font-weight: bold;">
+                        <td style="padding: 15px; border: 1px solid #ddd;">TOTAL SAVINGS</td>
+                        <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">$1,200-2,000</td>
+                        <td style="padding: 15px; text-align: center; border: 1px solid #ddd; color: #10b981;">$315-485</td>
+                        <td style="padding: 15px; text-align: center; border: 1px solid #ddd; color: #10b981; font-size: 18px;">$885-1,515</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="tip">
+                <div class="tip-header">
+                    <span class="warning-icon">💡</span>
+                    <h4>Save Even More with Boat Pro</h4>
+                </div>
+                <p>Our members save an additional $3,500-4,000 annually through exclusive deal alerts, bulk purchasing discounts on marine supplies, and access to trusted service providers. Over 5 years, that's over $20,000 in savings!</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Essential Supplies Checklist -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">🛠️</span>
+            <h3 class="section-title">Essential Winterization Supplies</h3>
+        </div>
+        <div class="section-content">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0;">
+                <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                    <h4 style="color: #1e40af; margin-bottom: 15px;">Engine & Fuel</h4>
+                    <ul style="color: #475569; line-height: 2;">
+                        <li>Engine oil & filter</li>
+                        <li>Fogging oil</li>
+                        <li>Fuel stabilizer</li>
+                        <li>Marine antifreeze (3-5 gallons)</li>
+                        <li>Gear oil (outdrive/lower unit)</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                    <h4 style="color: #1e40af; margin-bottom: 15px;">Cleaning & Protection</h4>
+                    <ul style="color: #475569; line-height: 2;">
+                        <li>Marine soap & wash mitt</li>
+                        <li>Quality marine wax</li>
+                        <li>UV protectant spray</li>
+                        <li>Mold/mildew cleaner</li>
+                        <li>Corrosion inhibitor spray</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                    <h4 style="color: #1e40al; margin-bottom: 15px;">Storage & Prevention</h4>
+                    <ul style="color: #475569; line-height: 2;">
+                        <li>Moisture absorbers (DampRid)</li>
+                        <li>Boat cover or shrink wrap</li>
+                        <li>Support stands/blocks</li>
+                        <li>Rodent deterrents</li>
+                        <li>Battery maintainer/trickle charger</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                    <h4 style="color: #1e40af; margin-bottom: 15px;">Tools & Misc</h4>
+                    <ul style="color: #475569; line-height: 2;">
+                        <li>Oil change pump</li>
+                        <li>Antifreeze pump/kit</li>
+                        <li>Funnel set</li>
+                        <li>Rags & paper towels</li>
+                        <li>Labels & markers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Common Mistakes -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">❌</span>
+            <h3 class="section-title">Top 10 Winterization Mistakes to Avoid</h3>
+        </div>
+        <div class="section-content">
+            <div style="background: #fef2f2; border: 2px solid #ef4444; border-radius: 10px; padding: 25px; margin: 20px 0;">
+                <ol style="color: #7f1d1d; line-height: 2; padding-left: 20px;">
+                    <li><strong>Skipping fuel stabilizer</strong> - Results in gummed carburetors and fuel injectors ($500-2000 repair)</li>
+                    <li><strong>Not changing oil before storage</strong> - Acids corrode engine internals over winter</li>
+                    <li><strong>Forgetting to fog the engine</strong> - Internal rust can ruin cylinders and rings</li>
+                    <li><strong>Leaving water in systems</strong> - One freeze = cracked block or burst pipes</li>
+                    <li><strong>Improper battery storage</strong> - Dead batteries sulfate and become unusable</li>
+                    <li><strong>Sealing boat too tightly</strong> - Trapped moisture causes mold and mildew</li>
+                    <li><strong>Not supporting hull properly</strong> - Can cause structural damage or hull distortion</li>
+                    <li><strong>Leaving electronics aboard</strong> - Moisture damage ruins expensive equipment</li>
+                    <li><strong>Skipping final inspection</strong> - Small leaks become major problems by spring</li>
+                    <li><strong>Procrastinating until too late</strong> - Rushed winterization leads to forgotten steps</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Regional Considerations -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">🗺️</span>
+            <h3 class="section-title">Regional Winterization Guide</h3>
+        </div>
+        <div class="section-content">
+            <div class="checklist">
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Northern Climates (Below 32°F regularly)</h4>
+                        <p><strong>Full winterization required.</strong> Complete all steps in this guide. Consider heated storage or at minimum, quality shrink-wrap. Antifreeze is mandatory for all water systems. Budget: $500-800 DIY.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Mid-Atlantic/Transitional (Occasional freezing)</h4>
+                        <p><strong>Most steps required.</strong> Full engine winterization essential. Can sometimes skip plumbing antifreeze if boat is enclosed and heated. Monitor weather closely. Budget: $300-500 DIY.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Southern Climates (Rarely below 40°F)</h4>
+                        <p><strong>Modified winterization.</strong> Still stabilize fuel, change oil, and perform maintenance. Focus on corrosion prevention and proper storage. May not need antifreeze. Budget: $200-300 DIY.</p>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="checklist-content">
+                        <h4>Tropical/No Winter (Florida, Caribbean)</h4>
+                        <p><strong>Year-round maintenance focus.</strong> Emphasize hurricane preparation, UV protection, and regular use. "Winterization" becomes off-season maintenance. Budget: $150-250 for seasonal prep.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Quick Reference Checklist -->
+    <div class="section" style="background: #f8fafc; padding: 30px; border-radius: 15px; border: 3px solid #1e40af;">
+        <h3 style="color: #1e40af; font-size: 28px; margin-bottom: 20px; text-align: center;">📋 Quick Reference Checklist</h3>
+        <p style="text-align: center; margin-bottom: 25px; color: #475569;">Print this page and check off items as you complete them!</p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <h4 style="color: #1e40af; margin-bottom: 10px;">ENGINE</h4>
+                <div style="line-height: 2.5; color: #475569;">
+                    ☐ Change oil & filter<br>
+                    ☐ Fog engine<br>
+                    ☐ Add fuel stabilizer<br>
+                    ☐ Winterize cooling system<br>
+                    ☐ Change gear oil<br>
+                    ☐ Remove batteries
+                </div>
+                
+                <h4 style="color: #1e40af; margin: 20px 0 10px;">PLUMBING</h4>
+                <div style="line-height: 2.5; color: #475569;">
+                    ☐ Drain fresh water<br>
+                    ☐ Add antifreeze<br>
+                    ☐ Winterize heads<br>
+                    ☐ Drain water heater<br>
+                    ☐ Drain livewell
+                </div>
+            </div>
+            
+            <div>
+                <h4 style="color: #1e40af; margin-bottom: 10px;">EXTERIOR</h4>
+                <div style="line-height: 2.5; color: #475569;">
+                    ☐ Wash hull<br>
+                    ☐ Wax hull<br>
+                    ☐ Clean canvas<br>
+                    ☐ Lubricate fittings<br>
+                    ☐ Install cover<br>
+                    ☐ Support hull properly
+                </div>
+                
+                <h4 style="color: #1e40af; margin: 20px 0 10px;">INTERIOR</h4>
+                <div style="line-height: 2.5; color: #475569;">
+                    ☐ Deep clean<br>
+                    ☐ Add moisture absorbers<br>
+                    ☐ Remove valuables<br>
+                    ☐ Remove electronics<br>
+                    ☐ Pest prevention
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Conclusion & Next Steps -->
+    <div class="section">
+        <div class="section-header" style="background: linear-gradient(135deg, #1e40af, #7c3aed);">
+            <span class="section-icon">🎯</span>
+            <h3 class="section-title">Congratulations! You're Ready to Winterize</h3>
+        </div>
+        <div class="section-content">
+            <p style="font-size: 18px; line-height: 1.8; margin-bottom: 25px;">
+                By following this comprehensive guide, you'll protect your boat investment and ensure it's ready for another amazing season on the water. Remember: proper winterization typically takes 1-2 full days, but the peace of mind and cost savings are worth every minute.
+            </p>
+            
+            <div style="background: linear-gradient(135deg, #dbeafe, #e0e7ff); padding: 30px; border-radius: 12px; margin: 30px 0;">
+                <h4 style="color: #1e40af; font-size: 22px; margin-bottom: 15px; text-align: center;">Want More Expert Boating Content?</h4>
+                <p style="text-align: center; color: #475569; font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
+                    Join thousands of smart boat owners who receive our monthly Boat Pro Newsletter packed with:
+                </p>
+                <ul style="color: #475569; line-height: 2; max-width: 600px; margin: 0 auto 25px;">
+                    <li>Monthly DIY maintenance tutorials</li>
+                    <li>Exclusive boat deal alerts (save up to $5,000)</li>
+                    <li>Boat show guides and insider access</li>
+                    <li>Expert purchasing strategies</li>
+                    <li>Destination guides and cruising tips</li>
+                    <li>Product reviews and recommendations</li>
+                </ul>
+                <p style="text-align: center; font-size: 18px; color: #1e40af; font-weight: 700;">
+                    📧 Already subscribed? Watch for your monthly newsletter!
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-logo">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="https://i.imgur.com/YourLogoHere.png" alt="Boat Pro Logo">
+                </div>
+                <div class="logo-text">
+                    <h1 style="font-size: 32px;">BOAT PRO</h1>
+                    <div class="logo-tagline">Expert Boating Knowledge</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <h4>Questions? We're Here to Help!</h4>
+            <p style="color: #475569; line-height: 1.8;">
+                <strong>Email:</strong> support@boatpro.com<br>
+                <strong>Newsletter:</strong> Sign up at www.boatpro.com<br>
+                <strong>Follow Us:</strong> @BoatProOfficial
+            </p>
+        </div>
+        
+        <p style="margin: 20px 0;">© 2025 Boat Pro. All rights reserved.</p>
+        <p style="font-size: 12px; color: #94a3b8;">
+            This guide is provided for educational purposes. Always consult your owner's manual and follow manufacturer recommendations. Boat Pro is not responsible for damage resulting from improper winterization.
+        </p>
+        
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
+            <p style="color: #3b82f6; font-weight: 600; font-size: 16px;">
+                💰 Save up to $5,000 on your next boat purchase with Boat Pro insider strategies!
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>
